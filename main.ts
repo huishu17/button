@@ -1,7 +1,7 @@
-input.onPinPressed(TouchPin.P0, function () {
-    if (y > 0) {
+input.onGesture(Gesture.LogoDown, function () {
+    if (y < 4) {
         led.unplot(x, y)
-        y += -1
+        y += 1
     }
 })
 input.onButtonPressed(Button.A, function () {
@@ -10,16 +10,16 @@ input.onButtonPressed(Button.A, function () {
         x += -1
     }
 })
+input.onGesture(Gesture.ScreenUp, function () {
+    if (y > 0) {
+        led.unplot(x, y)
+        y += -1
+    }
+})
 input.onButtonPressed(Button.B, function () {
     if (x < 4) {
         led.unplot(x, y)
         x += 1
-    }
-})
-input.onPinPressed(TouchPin.P1, function () {
-    if (y < 4) {
-        led.unplot(x, y)
-        y += 1
     }
 })
 let y = 0
