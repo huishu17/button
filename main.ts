@@ -1,22 +1,22 @@
-input.onGesture(Gesture.LogoDown, function () {
-    if (y < 4) {
-        led.unplot(x, y)
-        y += 1
-    }
-})
-input.onButtonPressed(Button.A, function () {
+input.onGesture(Gesture.TiltLeft, function () {
     if (x > 0) {
         led.unplot(x, y)
         x += -1
     }
 })
-input.onGesture(Gesture.ScreenUp, function () {
+input.onButtonPressed(Button.A, function () {
     if (y > 0) {
         led.unplot(x, y)
         y += -1
     }
 })
 input.onButtonPressed(Button.B, function () {
+    if (y < 4) {
+        led.unplot(x, y)
+        y += 1
+    }
+})
+input.onGesture(Gesture.TiltRight, function () {
     if (x < 4) {
         led.unplot(x, y)
         x += 1
